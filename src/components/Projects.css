@@ -1,0 +1,776 @@
+.projects {
+
+    height: 100vh;
+
+    padding: 45px 7%;
+
+    position: relative;
+
+    overflow: hidden;
+
+
+    background:
+
+        linear-gradient(135deg,
+            #020617,
+            #111827,
+            #1e1b4b);
+
+}
+
+
+
+/* ================= BACKGROUND ================= */
+
+
+.projects::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+
+    background:
+
+        linear-gradient(45deg,
+            #06b6d4,
+            #8b5cf6,
+            #ec4899);
+
+
+    border-radius: 50%;
+
+
+    filter: blur(120px);
+
+
+    opacity: .35;
+
+
+    top: -180px;
+
+    left: -150px;
+
+
+    animation:
+
+        moveGlow 8s infinite alternate;
+
+}
+
+
+
+.projects::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+
+    background:
+
+        linear-gradient(45deg,
+            #2563eb,
+            #22c55e);
+
+
+    border-radius: 50%;
+
+
+    filter: blur(120px);
+
+
+    opacity: .3;
+
+
+    bottom: -150px;
+
+    right: -120px;
+
+
+    animation:
+
+        moveGlow 10s infinite alternate-reverse;
+
+}
+
+
+
+@keyframes moveGlow {
+
+
+    from {
+
+        transform: translate(0);
+
+    }
+
+
+    to {
+
+        transform: translate(80px, 60px);
+
+    }
+
+}
+
+
+
+
+
+/* ================= HEADER ================= */
+
+
+.projects-header {
+
+    position: relative;
+
+    z-index: 2;
+
+
+    text-align: center;
+
+
+    margin-bottom: 35px;
+
+
+    animation:
+
+        fadeDown 1s ease;
+
+}
+
+
+
+@keyframes fadeDown {
+
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-40px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+
+.projects-header span {
+
+
+    color: #38bdf8;
+
+
+    font-size: 12px;
+
+
+    letter-spacing: 4px;
+
+
+    font-weight: 800;
+
+}
+
+
+
+.projects-header h2 {
+
+
+    margin: 12px 0;
+
+
+    font-size: 42px;
+
+
+    font-weight: 900;
+
+
+    background:
+
+        linear-gradient(90deg,
+            white,
+            #38bdf8,
+            #ec4899,
+            white);
+
+
+    background-size: 300%;
+
+
+    -webkit-background-clip: text;
+
+
+    -webkit-text-fill-color: transparent;
+
+
+    animation:
+
+        textMove 5s infinite;
+
+}
+
+
+
+@keyframes textMove {
+
+
+    50% {
+
+        background-position: 100%;
+
+    }
+
+}
+
+
+
+
+.projects-header p {
+
+
+    color: #cbd5e1;
+
+
+    font-size: 14px;
+
+}
+
+
+
+
+
+
+
+/* ================= GRID ================= */
+
+
+.projects-grid {
+
+
+    position: relative;
+
+    z-index: 2;
+
+
+    display: grid;
+
+
+    grid-template-columns:
+
+        repeat(2, 1fr);
+
+
+    gap: 25px;
+
+}
+
+
+
+
+
+
+
+/* ================= CARD ================= */
+
+
+.project-card {
+
+
+    position: relative;
+
+
+    padding: 25px;
+
+
+    border-radius: 28px;
+
+
+    background:
+
+        rgba(255, 255, 255, .10);
+
+
+
+    backdrop-filter: blur(20px);
+
+
+
+    border:
+
+        1px solid rgba(255, 255, 255, .18);
+
+
+
+    overflow: hidden;
+
+
+    opacity: 0;
+
+
+    animation:
+
+        cardShow .8s forwards;
+
+
+    transition: .5s;
+
+}
+
+
+
+.project-card:nth-child(2) {
+
+    animation-delay: .3s;
+
+}
+
+
+
+@keyframes cardShow {
+
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(60px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* SHINE EFFECT */
+
+
+.project-card::before {
+
+
+    content: "";
+
+
+    position: absolute;
+
+
+    width: 150%;
+
+
+    height: 40%;
+
+
+    top: -100%;
+
+
+    left: -30%;
+
+
+    background:
+
+        linear-gradient(transparent,
+            rgba(255, 255, 255, .35),
+            transparent);
+
+
+    transform: rotate(25deg);
+
+
+    transition: .8s;
+
+}
+
+
+
+.project-card:hover::before {
+
+
+    top: 130%;
+
+
+}
+
+
+
+.project-card:hover {
+
+
+    transform:
+
+        translateY(-15px) scale(1.03);
+
+
+    border-color: #38bdf8;
+
+
+    box-shadow:
+
+        0 30px 70px rgba(56, 189, 248, .35);
+
+}
+
+
+
+
+
+
+
+/* ================= ICON ================= */
+
+
+.project-icon {
+
+
+    width: 65px;
+
+
+    height: 65px;
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+    font-size: 32px;
+
+
+    color: white;
+
+
+    border-radius: 22px;
+
+
+    margin-bottom: 18px;
+
+
+    transition: .7s;
+
+
+    animation:
+
+        iconFloat 3s infinite ease-in-out;
+
+
+}
+
+
+
+
+@keyframes iconFloat {
+
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+
+    50% {
+
+        transform: translateY(-8px);
+
+    }
+
+
+}
+
+
+
+
+/* ICON HOVER ROTATION */
+
+
+.project-card:hover .project-icon {
+
+
+    animation: none;
+
+
+    transform:
+
+        rotateY(360deg) scale(1.15);
+
+}
+
+
+
+.project-icon svg {
+
+
+    filter:
+
+        drop-shadow(0 0 15px #38bdf8);
+
+}
+
+
+
+
+
+.blue .project-icon {
+
+
+    background:
+
+        linear-gradient(135deg,
+            #2563eb,
+            #06b6d4);
+
+}
+
+
+
+.pink .project-icon {
+
+
+    background:
+
+        linear-gradient(135deg,
+            #ec4899,
+            #8b5cf6);
+
+}
+
+
+
+
+
+
+
+/* ================= TEXT ================= */
+
+
+.project-card h3 {
+
+
+    color: white;
+
+
+    font-size: 23px;
+
+
+    margin-bottom: 10px;
+
+
+}
+
+
+
+
+.project-card p {
+
+
+    color: #cbd5e1;
+
+
+    font-size: 13px;
+
+
+    line-height: 1.6;
+
+
+}
+
+
+
+
+
+
+
+/* ================= TECHNOLOGY TAGS ================= */
+
+
+.tech-list {
+
+
+    display: flex;
+
+
+    flex-wrap: wrap;
+
+
+    gap: 7px;
+
+
+    margin: 15px 0;
+
+}
+
+
+
+.tech-list span {
+
+
+    padding: 5px 11px;
+
+
+    border-radius: 20px;
+
+
+    color: #38bdf8;
+
+
+    font-size: 11px;
+
+
+    background:
+
+        rgba(56, 189, 248, .12);
+
+
+    border:
+
+        1px solid rgba(56, 189, 248, .3);
+
+
+    transition: .3s;
+
+
+}
+
+
+
+.tech-list span:hover {
+
+
+    transform:
+
+        translateY(-5px);
+
+
+    background: #38bdf8;
+
+
+    color: #020617;
+
+}
+
+
+
+
+
+
+
+/* ================= BUTTON ================= */
+
+
+.project-btn {
+
+
+    padding: 10px 25px;
+
+
+    border: none;
+
+
+    border-radius: 30px;
+
+
+    color: white;
+
+
+    font-weight: 700;
+
+
+    cursor: pointer;
+
+
+    background:
+
+        linear-gradient(90deg,
+            #2563eb,
+            #ec4899);
+
+
+    transition: .4s;
+
+
+}
+
+
+
+.project-btn:hover {
+
+
+    transform:
+
+        scale(1.1);
+
+
+    box-shadow:
+
+        0 15px 40px rgba(236, 72, 153, .5);
+
+}
+
+
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:900px) {
+
+
+    .projects {
+
+        height: auto;
+
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .projects-header h2 {
+
+        font-size: 32px;
+
+    }
+
+
+}

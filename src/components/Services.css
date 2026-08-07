@@ -1,0 +1,280 @@
+.services {
+
+    height: 100vh;
+
+    padding: 35px 6%;
+
+    overflow: hidden;
+
+    position: relative;
+
+
+    background:
+        linear-gradient(135deg,
+            #020617,
+            #111827,
+            #1e1b4b);
+
+}
+
+
+
+/* HEADER */
+
+.services-header {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.services-header span {
+
+    color: #22d3ee;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+.services-header h2 {
+
+    margin: 10px 0;
+
+    font-size: 35px;
+
+    font-weight: 900;
+
+
+    background:
+
+        linear-gradient(90deg,
+            #22d3ee,
+            #a855f7,
+            #ec4899);
+
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+.services-header p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+
+
+
+/* GRID */
+
+
+.services-grid {
+
+    display: grid;
+
+
+    grid-template-columns:
+
+        repeat(3, 1fr);
+
+
+    gap: 15px;
+
+}
+
+
+
+
+
+/* CARD */
+
+
+.service-card {
+
+
+    padding: 18px;
+
+
+    border-radius: 20px;
+
+
+    background:
+
+        linear-gradient(145deg,
+            rgba(255, 255, 255, .15),
+            rgba(255, 255, 255, .05));
+
+
+    backdrop-filter: blur(12px);
+
+
+    border:
+
+        1px solid rgba(255, 255, 255, .15);
+
+
+    transition: .3s;
+
+}
+
+
+
+.service-card:hover {
+
+
+    transform:
+
+        translateY(-8px);
+
+
+    box-shadow:
+
+        0 15px 40px rgba(139, 92, 246, .4);
+
+}
+
+
+
+
+
+/* ICON */
+
+
+.service-icon {
+
+
+    width: 50px;
+
+    height: 50px;
+
+
+    font-size: 25px;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    border-radius: 15px;
+
+
+    margin-bottom: 12px;
+
+
+    color: white;
+
+
+    background:
+
+        linear-gradient(135deg,
+            #ec4899,
+            #8b5cf6,
+            #06b6d4);
+
+}
+
+
+
+
+/* TEXT */
+
+
+.service-card h3 {
+
+
+    color: white;
+
+
+    font-size: 17px;
+
+
+    margin-bottom: 8px;
+
+
+}
+
+
+
+.service-card p {
+
+
+    color: #dbeafe;
+
+
+    font-size: 12px;
+
+
+    line-height: 1.5;
+
+}
+
+
+
+
+
+@media(max-width:900px) {
+
+
+    .services {
+
+        height: auto;
+
+    }
+
+
+
+    .services-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px) {
+
+
+    .services {
+
+        height: auto;
+
+    }
+
+
+
+    .services-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+}

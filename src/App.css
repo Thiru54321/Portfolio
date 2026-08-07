@@ -1,0 +1,189 @@
+/* ===========================
+   APP LAYOUT
+=========================== */
+
+main {
+  overflow-x: hidden;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section {
+  width: 100%;
+  padding: 100px 10%;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===========================
+   COMMON TITLES
+=========================== */
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn,
+.btn-outline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background: #3b82f6;
+  transform: translateY(-4px);
+}
+
+.btn-outline {
+  border: 2px solid #2563eb;
+  color: white;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #2563eb;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, .25);
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* ===========================
+   TEXT SELECTION
+=========================== */
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+  section {
+    padding: 80px 7%;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 70px 6%;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .btn,
+  .btn-outline {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+}

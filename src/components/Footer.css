@@ -1,0 +1,613 @@
+.footer {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 60px 7% 25px;
+
+    background:
+
+        linear-gradient(135deg,
+            #020617,
+            #111827,
+            #172554);
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+
+/* ================= BACKGROUND EFFECT ================= */
+
+
+.footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+
+    background:
+
+        linear-gradient(45deg,
+            #2563eb,
+            #9333ea,
+            #ec4899);
+
+
+    border-radius: 50%;
+
+
+    filter: blur(100px);
+
+
+    opacity: .3;
+
+
+    top: -250px;
+
+    left: -200px;
+
+
+    animation: liquidMove 12s infinite alternate;
+
+}
+
+
+
+.footer::after {
+
+    content: "";
+
+
+    position: absolute;
+
+
+    width: 450px;
+
+    height: 450px;
+
+
+    background:
+
+        linear-gradient(45deg,
+            #06b6d4,
+            #22c55e,
+            #8b5cf6);
+
+
+    border-radius: 50%;
+
+
+    filter: blur(100px);
+
+
+    opacity: .25;
+
+
+    right: -200px;
+
+    bottom: -200px;
+
+
+    animation: liquidMove 15s infinite alternate-reverse;
+
+}
+
+
+
+@keyframes liquidMove {
+
+
+    from {
+
+        transform:
+            translate(0) rotate(0deg);
+
+    }
+
+
+    to {
+
+        transform:
+            translate(60px, 40px) rotate(180deg);
+
+    }
+
+
+}
+
+
+
+
+
+/* ================= CONTAINER ================= */
+
+
+.footer-container {
+
+    position: relative;
+
+    z-index: 2;
+
+
+    display: grid;
+
+
+    grid-template-columns:
+
+        2fr 1fr 1fr;
+
+
+    gap: 25px;
+
+}
+
+
+
+
+
+
+/* ================= GLASS CARDS ================= */
+
+
+.footer-brand,
+.footer-links,
+.footer-contact {
+
+
+    padding: 25px;
+
+
+    border-radius: 25px;
+
+
+    background:
+
+        rgba(255, 255, 255, .08);
+
+
+    backdrop-filter: blur(20px);
+
+
+    border:
+
+        1px solid rgba(255, 255, 255, .15);
+
+
+    box-shadow:
+
+        0 20px 40px rgba(0, 0, 0, .35);
+
+
+    transition: .4s;
+
+}
+
+
+
+
+.footer-brand:hover,
+.footer-links:hover,
+.footer-contact:hover {
+
+
+    transform:
+
+        translateY(-10px);
+
+
+    box-shadow:
+
+        0 30px 60px rgba(0, 0, 0, .5);
+
+}
+
+
+
+
+
+
+
+/* ================= BRAND ================= */
+
+
+.footer-brand h2 {
+
+
+    font-size: 34px;
+
+
+    font-weight: 900;
+
+
+    letter-spacing: 3px;
+
+
+    color: white;
+
+
+}
+
+
+
+.footer-brand span {
+
+
+    background:
+
+        linear-gradient(90deg,
+            #38bdf8,
+            #a855f7,
+            #ec4899);
+
+
+    -webkit-background-clip: text;
+
+
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+
+
+
+.footer-brand p {
+
+
+    margin-top: 15px;
+
+
+    color: #cbd5e1;
+
+
+    line-height: 1.6;
+
+
+    font-size: 14px;
+
+}
+
+
+
+
+
+/* ================= HEADINGS ================= */
+
+
+.footer-links h3,
+.footer-contact h3 {
+
+
+    color: white;
+
+
+    font-size: 20px;
+
+
+    margin-bottom: 18px;
+
+}
+
+
+
+
+
+/* ================= LINKS ================= */
+
+
+.footer-links a,
+.footer-contact a {
+
+
+    position: relative;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    gap: 12px;
+
+
+    color: #cbd5e1;
+
+
+    text-decoration: none;
+
+
+    margin: 12px 0;
+
+
+    font-size: 14px;
+
+
+    transition: .3s;
+
+}
+
+
+
+.footer-links a:hover,
+.footer-contact a:hover {
+
+
+    color: white;
+
+
+    transform: translateX(8px);
+
+}
+
+
+
+
+
+.footer-contact svg {
+
+
+    color: #38bdf8;
+
+
+    font-size: 20px;
+
+}
+
+
+
+
+
+
+/* ================= BOTTOM ================= */
+
+
+.footer hr {
+
+
+    position: relative;
+
+
+    z-index: 2;
+
+
+    margin: 35px 0 20px;
+
+
+    border: none;
+
+
+    height: 2px;
+
+
+    background:
+
+        linear-gradient(90deg,
+            transparent,
+            #38bdf8,
+            #ec4899,
+            transparent);
+
+}
+
+
+
+
+
+.footer-bottom {
+
+
+    position: relative;
+
+
+    z-index: 2;
+
+
+    display: flex;
+
+
+    justify-content: space-between;
+
+
+    align-items: center;
+
+}
+
+
+
+
+
+.footer-bottom p {
+
+
+    color: #94a3b8;
+
+
+    font-size: 14px;
+
+}
+
+
+
+
+
+/* HEART */
+
+
+.heart {
+
+
+    color: #ff3366;
+
+
+    margin: 0 6px;
+
+
+    position: relative;
+
+
+    top: 3px;
+
+
+    animation: beat 1.3s infinite;
+
+}
+
+
+
+
+@keyframes beat {
+
+
+    50% {
+
+        transform: scale(1.3);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* ================= TOP BUTTON ================= */
+
+
+.top-button {
+
+
+    width: 55px;
+
+
+    height: 55px;
+
+
+    border-radius: 50%;
+
+
+    border: none;
+
+
+    cursor: pointer;
+
+
+    color: white;
+
+
+    font-size: 20px;
+
+
+    background:
+
+        linear-gradient(135deg,
+            #2563eb,
+            #9333ea,
+            #ec4899);
+
+
+    box-shadow:
+
+        0 0 30px #9333ea;
+
+
+    transition: .4s;
+
+}
+
+
+
+
+.top-button:hover {
+
+
+    transform:
+
+        translateY(-8px) rotate(360deg);
+
+
+    box-shadow:
+
+        0 0 50px #ec4899;
+
+}
+
+
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:900px) {
+
+
+    .footer-container {
+
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .footer-bottom {
+
+
+        flex-direction: column;
+
+
+        gap: 20px;
+
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px) {
+
+
+    .footer {
+
+
+        padding: 50px 5% 20px;
+
+    }
+
+
+
+    .footer-brand h2 {
+
+
+        font-size: 28px;
+
+    }
+
+
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+
+
+        padding: 20px;
+
+    }
+
+
+}
