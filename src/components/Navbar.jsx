@@ -1,179 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { FaBars, FaTimes } from "react-icons/fa";
-// import "./Navbar.css";
-
-
-// function Navbar() {
-
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const [showNavbar, setShowNavbar] = useState(false);
-
-
-//   useEffect(() => {
-
-//     let lastScroll = window.scrollY;
-
-
-//     const handleScroll = () => {
-
-//       const currentScroll = window.scrollY;
-
-
-//       if (currentScroll < lastScroll) {
-
-//         setShowNavbar(true);
-
-//       }
-//       else if (currentScroll > 100) {
-
-//         setShowNavbar(false);
-//         setMenuOpen(false);
-
-//       }
-
-
-//       lastScroll = currentScroll;
-
-//     };
-
-
-//     window.addEventListener(
-//       "scroll",
-//       handleScroll
-//     );
-
-
-//     return () => {
-
-//       window.removeEventListener(
-//         "scroll",
-//         handleScroll
-//       );
-
-//     };
-
-
-//   }, []);
-
-
-
-//   return (
-
-//     <>
-
-//       {/* Mouse hover area */}
-
-//       <div
-//         className="top-hover-area"
-//         onMouseEnter={() => setShowNavbar(true)}
-//       ></div>
-
-
-
-//       <header
-//         className={
-//           showNavbar
-//             ? "navbar show"
-//             : "navbar hide"
-//         }
-//       >
-
-
-
-//         <div className="logo">
-
-//           <span>
-//             Thiru.dev
-//           </span>
-
-//         </div>
-
-
-
-
-//         <nav
-//           className={
-//             menuOpen
-//               ? "nav-links active"
-//               : "nav-links"
-//           }
-//         >
-
-
-//           <a href="#home">
-//             Home
-//           </a>
-
-
-//           <a href="#about">
-//             About
-//           </a>
-
-
-//           <a href="#skills">
-//             Skills
-//           </a>
-
-
-//           <a href="#projects">
-//             Projects
-//           </a>
-
-
-//           <a href="#services">
-//             Services
-//           </a>
-
-
-//           <a href="#contact">
-//             Contact
-//           </a>
-
-
-
-//           <a
-//             href="/resume.pdf"
-//             className="resume-btn"
-//             download
-//           >
-
-//             Resume
-
-//           </a>
-
-
-//         </nav>
-
-
-
-
-//         <div
-//           className="menu-icon"
-//           onClick={() => setMenuOpen(!menuOpen)}
-//         >
-
-//           {
-//             menuOpen
-//               ? <FaTimes />
-//               : <FaBars />
-//           }
-
-//         </div>
-
-
-
-//       </header>
-
-
-//     </>
-
-//   );
-
-// }
-
-
-// export default Navbar;
-
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
@@ -188,16 +12,11 @@ function Navbar() {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
-      // At the top, always show navbar
       if (currentScroll <= 100) {
         setShowNavbar(true);
-      }
-      // Scrolling up
-      else if (currentScroll < lastScroll) {
+      } else if (currentScroll < lastScroll) {
         setShowNavbar(true);
-      }
-      // Scrolling down
-      else if (currentScroll > lastScroll) {
+      } else if (currentScroll > lastScroll) {
         setShowNavbar(false);
         setMenuOpen(false);
       }
@@ -214,20 +33,26 @@ function Navbar() {
 
   return (
     <>
-      {/* Mouse hover area */}
+      {/* Top mouse trigger */}
       <div
         className="top-hover-area"
         onMouseEnter={() => setShowNavbar(true)}
       ></div>
 
       <header className={showNavbar ? "navbar show" : "navbar hide"}>
-        {/* Logo */}
+
+        {/* ================= LOGO ================= */}
+
         <div className="logo">
-          <span>Thiru.dev</span>
+          <span className="logo-main">Thiru</span>
+          <span className="logo-dot">.</span>
+          <span className="logo-dev">dev</span>
         </div>
 
-        {/* Navigation */}
+        {/* ================= NAVIGATION ================= */}
+
         <nav className={menuOpen ? "nav-links active" : "nav-links"}>
+
           <a href="#home" onClick={() => setMenuOpen(false)}>
             Home
           </a>
@@ -252,7 +77,6 @@ function Navbar() {
             Contact
           </a>
 
-          {/* Resume */}
           <a
             href="/Resume.pdf"
             className="resume-btn"
@@ -261,15 +85,18 @@ function Navbar() {
           >
             Resume
           </a>
+
         </nav>
 
-        {/* Mobile menu button */}
+        {/* ================= MOBILE MENU ================= */}
+
         <div
           className="menu-icon"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
+
       </header>
     </>
   );

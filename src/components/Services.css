@@ -1,280 +1,575 @@
+/* =========================================
+   SERVICES
+========================================= */
+
 .services {
+  position: relative;
+  height: 100vh;
+  min-height: 520px;
+  box-sizing: border-box;
 
-    height: 100vh;
+  padding: 55px 6% 25px;
 
-    padding: 35px 6%;
+  overflow: hidden;
 
-    overflow: hidden;
+  perspective: 1500px;
 
-    position: relative;
-
-
-    background:
-        linear-gradient(135deg,
-            #020617,
-            #111827,
-            #1e1b4b);
-
+  background:
+    radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.12), transparent 25%),
+    radial-gradient(circle at 85% 70%, rgba(168, 85, 247, 0.12), transparent 25%),
+    linear-gradient(135deg, #020617, #111827, #1e1b4b);
 }
 
 
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
 
-/* HEADER */
+.services::before,
+.services::after {
+  content: "";
+  position: absolute;
+
+  border-radius: 50%;
+  filter: blur(70px);
+
+  pointer-events: none;
+
+  animation: glowMove 7s ease-in-out infinite alternate;
+}
+
+.services::before {
+  width: 220px;
+  height: 220px;
+
+  top: 10%;
+  left: 3%;
+
+  background: rgba(34, 211, 238, 0.13);
+}
+
+.services::after {
+  width: 240px;
+  height: 240px;
+
+  right: 3%;
+  bottom: 0;
+
+  background: rgba(236, 72, 153, 0.12);
+
+  animation-delay: 2s;
+}
+
+@keyframes glowMove {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(30px, -25px, 70px);
+  }
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
 
 .services-header {
+  position: relative;
+  z-index: 5;
 
-    text-align: center;
+  text-align: center;
 
-    margin-bottom: 20px;
+  margin-bottom: 25px;
 
+  transform-style: preserve-3d;
+
+  animation: headerEnter 1s ease forwards;
 }
 
-
-.services-header span {
-
-    color: #22d3ee;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-}
-
-
-
-.services-header h2 {
-
-    margin: 10px 0;
-
-    font-size: 35px;
-
-    font-weight: 900;
-
-
-    background:
-
-        linear-gradient(90deg,
-            #22d3ee,
-            #a855f7,
-            #ec4899);
-
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-}
-
-
-
-.services-header p {
-
-    max-width: 600px;
-
-    margin: auto;
-
-    color: #cbd5e1;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-
-}
-
-
-
-
-
-/* GRID */
-
-
-.services-grid {
-
-    display: grid;
-
-
-    grid-template-columns:
-
-        repeat(3, 1fr);
-
-
-    gap: 15px;
-
-}
-
-
-
-
-
-/* CARD */
-
-
-.service-card {
-
-
-    padding: 18px;
-
-
-    border-radius: 20px;
-
-
-    background:
-
-        linear-gradient(145deg,
-            rgba(255, 255, 255, .15),
-            rgba(255, 255, 255, .05));
-
-
-    backdrop-filter: blur(12px);
-
-
-    border:
-
-        1px solid rgba(255, 255, 255, .15);
-
-
-    transition: .3s;
-
-}
-
-
-
-.service-card:hover {
-
+@keyframes headerEnter {
+  from {
+    opacity: 0;
 
     transform:
+      translateY(-40px)
+      translateZ(-100px)
+      rotateX(25deg);
+  }
 
-        translateY(-8px);
+  to {
+    opacity: 1;
 
+    transform:
+      translateY(0)
+      translateZ(0)
+      rotateX(0);
+  }
+}
 
-    box-shadow:
+.services-header span {
+  display: inline-block;
 
-        0 15px 40px rgba(139, 92, 246, .4);
+  color: #22d3ee;
 
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  transform: translateZ(35px);
+}
+
+.services-header h2 {
+  margin: 5px 0;
+
+  font-size: 34px;
+
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #a855f7,
+      #ec4899,
+      #22d3ee
+    );
+
+  background-size: 250%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 5s linear infinite;
+
+  transform: translateZ(55px);
+}
+
+@keyframes gradientMove {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 250%;
+  }
+}
+
+.services-header p {
+  max-width: 550px;
+
+  margin: auto;
+
+  color: #cbd5e1;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  transform: translateZ(25px);
 }
 
 
+/* =========================================
+   GRID
+========================================= */
+
+.services-grid {
+  position: relative;
+
+  z-index: 4;
+
+  max-width: 1050px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+
+  transform-style: preserve-3d;
+}
 
 
+/* =========================================
+   CARD
+========================================= */
 
-/* ICON */
+.service-card {
+  position: relative;
 
+  min-height: 175px;
+
+  padding: 17px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.1);
+
+  transform-style: preserve-3d;
+
+  opacity: 0;
+
+  animation:
+    cardEnter 0.8s ease forwards,
+    floatingCard 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   STAGGER
+========================================= */
+
+.service-card:nth-child(1) {
+  animation-delay: 0.1s, 1s;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.2s, 1.3s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.3s, 1.6s;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 0.4s, 1.9s;
+}
+
+.service-card:nth-child(5) {
+  animation-delay: 0.5s, 2.2s;
+}
+
+.service-card:nth-child(6) {
+  animation-delay: 0.6s, 2.5s;
+}
+
+
+/* =========================================
+   CARD ENTER
+========================================= */
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(60px)
+      translateZ(-200px)
+      rotateX(25deg)
+      rotateY(-15deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      translateZ(0)
+      rotateX(0)
+      rotateY(0);
+  }
+}
+
+
+/* =========================================
+   FLOAT
+========================================= */
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotateX(0)
+      rotateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-5px)
+      rotateX(1deg)
+      rotateY(-1deg);
+  }
+}
+
+
+/* =========================================
+   HOVER 3D
+========================================= */
+
+.service-card:hover {
+  animation-play-state: paused;
+
+  transform:
+    translateY(-12px)
+    translateZ(65px)
+    rotateX(6deg)
+    rotateY(-7deg)
+    scale(1.025);
+
+  border-color: rgba(255, 255, 255, 0.28);
+
+  box-shadow:
+    0 35px 65px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(168, 85, 247, 0.2);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================
+   SHINE
+========================================= */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 400px;
+
+  top: -100px;
+  left: -180px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+
+  transform: rotate(25deg);
+
+  transition: left 0.7s ease;
+
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  left: 120%;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
 
 .service-icon {
+  position: relative;
 
+  width: 45px;
+  height: 45px;
 
-    width: 50px;
+  display: flex;
 
-    height: 50px;
+  justify-content: center;
+  align-items: center;
 
+  border-radius: 13px;
 
-    font-size: 25px;
+  margin-bottom: 11px;
 
+  color: white;
 
-    display: flex;
+  font-size: 20px;
 
-    justify-content: center;
+  background:
+    linear-gradient(
+      135deg,
+      #ec4899,
+      #8b5cf6,
+      #06b6d4
+    );
 
-    align-items: center;
+  box-shadow:
+    0 8px 20px rgba(139, 92, 246, 0.3);
 
+  transform:
+    translateZ(55px)
+    rotateX(7deg)
+    rotateY(-7deg);
 
-    border-radius: 15px;
+  transform-style: preserve-3d;
 
+  transition: transform 0.45s ease;
+}
 
-    margin-bottom: 12px;
-
-
-    color: white;
-
-
-    background:
-
-        linear-gradient(135deg,
-            #ec4899,
-            #8b5cf6,
-            #06b6d4);
-
+.service-card:hover .service-icon {
+  transform:
+    translateZ(90px)
+    rotateX(12deg)
+    rotateY(25deg)
+    rotateZ(5deg)
+    scale(1.12);
 }
 
 
+/* =========================================
+   ICON RING
+========================================= */
+
+.service-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  animation: iconRing 3s ease-in-out infinite;
+}
+
+@keyframes iconRing {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.6;
+  }
+}
 
 
-/* TEXT */
-
+/* =========================================
+   TITLE
+========================================= */
 
 .service-card h3 {
+  position: relative;
 
+  margin: 0 0 6px;
 
-    color: white;
+  color: white;
 
+  font-size: 15px;
 
-    font-size: 17px;
+  transform: translateZ(40px);
 
+  transition: transform 0.4s ease;
+}
 
-    margin-bottom: 8px;
-
-
+.service-card:hover h3 {
+  transform:
+    translateZ(60px)
+    translateX(3px);
 }
 
 
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .service-card p {
+  position: relative;
+
+  margin: 0;
+
+  color: #dbeafe;
+
+  font-size: 10.5px;
+
+  line-height: 1.45;
+
+  transform: translateZ(25px);
+
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover p {
+  transform:
+    translateZ(40px)
+    translateX(2px);
+}
 
 
-    color: #dbeafe;
+/* =========================================
+   MOBILE
+========================================= */
 
+@media (max-width: 900px) {
 
-    font-size: 12px;
+  .services {
+    height: auto;
+    min-height: 100vh;
 
+    padding: 75px 5% 40px;
 
-    line-height: 1.5;
+    overflow: visible;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 }
 
 
+@media (max-width: 600px) {
 
+  .services {
+    height: auto;
 
+    padding: 80px 20px 45px;
 
-@media(max-width:900px) {
+    overflow: visible;
+  }
 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .services {
-
-        height: auto;
-
-    }
-
-
-
-    .services-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
+  .service-card {
+    min-height: 170px;
+  }
 
 }
 
 
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
-@media(max-width:600px) {
+@media (prefers-reduced-motion: reduce) {
 
-
-    .services {
-
-        height: auto;
-
-    }
-
-
-
-    .services-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
+  .services *,
+  .services::before,
+  .services::after {
+    animation: none !important;
+    transition: none !important;
+  }
 
 }

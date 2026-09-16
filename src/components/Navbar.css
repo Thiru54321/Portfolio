@@ -1,388 +1,607 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap'
-);
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
 
 * {
-
-    font-family: "Poppins", sans-serif;
-
+  font-family: "Poppins", sans-serif;
 }
 
 
-
-/* invisible mouse trigger */
+/* =====================================================
+   TOP MOUSE TRIGGER
+===================================================== */
 
 .top-hover-area {
+  position: fixed;
 
-    position: fixed;
+  top: 0;
+  left: 0;
 
-    top: 0;
+  width: 100%;
+  height: 35px;
 
+  z-index: 2000;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+  position: fixed;
+
+  top: 14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(1000px, 90%);
+
+  padding: 9px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 23, 42, .82),
+      rgba(30, 27, 75, .70)
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border:
+    1px solid rgba(255, 255, 255, .11);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, .32),
+    inset 0 1px 1px rgba(255, 255, 255, .14);
+
+  z-index: 1000;
+
+  perspective: 1200px;
+
+  transform-style: preserve-3d;
+
+  transition:
+    top .4s ease,
+    opacity .4s ease,
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+
+/* =====================================================
+   NAVBAR 3D HOVER
+===================================================== */
+
+.navbar:hover {
+  transform:
+    translateX(-50%)
+    translateY(-2px)
+    rotateX(2deg);
+
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, .42),
+    0 0 25px rgba(120, 90, 255, .14),
+    inset 0 1px rgba(255, 255, 255, .16);
+}
+
+
+/* =====================================================
+   SHOW / HIDE
+===================================================== */
+
+.navbar.show {
+  opacity: 1;
+  top: 14px;
+}
+
+.navbar.hide {
+  opacity: 0;
+  top: -80px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: -.8px;
+
+  color: white;
+
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform .4s cubic-bezier(.2,.8,.2,1),
+    filter .4s;
+}
+
+
+/* THIRU */
+
+.logo-main {
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 8px rgba(255, 255, 255, .12);
+
+  transform: translateZ(12px);
+
+  transition: .35s;
+}
+
+
+/* DOT */
+
+.logo-dot {
+  font-size: 24px;
+
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #8b5cf6,
+      #ec4899
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transform:
+    translateZ(25px)
+    scale(1.15);
+
+  text-shadow:
+    0 0 15px rgba(139, 92, 246, .7);
+
+  transition: .35s;
+}
+
+
+/* DEV */
+
+.logo-dev {
+  background:
+    linear-gradient(
+      135deg,
+      #60a5fa,
+      #a78bfa,
+      #f472b6
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transform: translateZ(12px);
+
+  transition: .35s;
+}
+
+
+/* =====================================================
+   LOGO 3D HOVER
+===================================================== */
+
+.logo:hover {
+  transform:
+    translateZ(20px)
+    rotateX(5deg)
+    rotateY(-7deg)
+    scale(1.04);
+
+  filter:
+    drop-shadow(
+      0 8px 15px rgba(99, 102, 241, .25)
+    );
+}
+
+.logo:hover .logo-main {
+  transform:
+    translateZ(25px);
+}
+
+.logo:hover .logo-dot {
+  transform:
+    translateZ(40px)
+    scale(1.3)
+    rotateZ(8deg);
+}
+
+.logo:hover .logo-dev {
+  transform:
+    translateZ(25px);
+}
+
+
+/* =====================================================
+   LOGO GLOW LINE
+===================================================== */
+
+.logo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #38bdf8,
+      #8b5cf6,
+      #ec4899
+    );
+
+  box-shadow:
+    0 0 10px rgba(139, 92, 246, .8);
+
+  transition:
+    width .4s ease;
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  perspective: 1000px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color:
+    rgba(255, 255, 255, .75);
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  padding: 7px 9px;
+
+  border-radius: 9px;
+
+  transform-style: preserve-3d;
+
+  transition:
+    color .3s,
+    transform .3s,
+    background .3s,
+    box-shadow .3s;
+}
+
+
+/* =====================================================
+   LINK 3D HOVER
+===================================================== */
+
+.nav-links a:hover {
+  color: white;
+
+  background:
+    rgba(255, 255, 255, .07);
+
+  transform:
+    translateY(-3px)
+    translateZ(12px)
+    rotateX(6deg);
+
+  box-shadow:
+    0 7px 15px rgba(0, 0, 0, .22),
+    inset 0 1px rgba(255, 255, 255, .14);
+}
+
+
+/* =====================================================
+   GLOW UNDERLINE
+===================================================== */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 2px;
+
+  width: 0;
+  height: 1.5px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8b5cf6,
+      #3b82f6
+    );
+
+  transform:
+    translateX(-50%);
+
+  box-shadow:
+    0 0 8px rgba(139, 92, 246, .75);
+
+  transition:
+    width .3s;
+}
+
+.nav-links a:hover::after {
+  width: 50%;
+}
+
+
+/* =====================================================
+   RESUME BUTTON
+===================================================== */
+
+.resume-btn {
+  margin-left: 5px;
+
+  color: white !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #2563eb
+    ) !important;
+
+  border:
+    1px solid rgba(255, 255, 255, .18);
+
+  box-shadow:
+    0 6px 15px rgba(59, 130, 246, .22),
+    inset 0 1px rgba(255, 255, 255, .22);
+
+  transform-style: preserve-3d;
+}
+
+.resume-btn:hover {
+  transform:
+    translateY(-4px)
+    translateZ(15px)
+    rotateX(5deg) !important;
+
+  box-shadow:
+    0 10px 22px rgba(59, 130, 246, .32),
+    0 0 18px rgba(124, 58, 237, .28);
+}
+
+.resume-btn::after {
+  display: none;
+}
+
+
+/* =====================================================
+   MOBILE MENU ICON
+===================================================== */
+
+.menu-icon {
+  display: none;
+
+  color: white;
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  padding: 5px;
+
+  border-radius: 8px;
+
+  transform-style: preserve-3d;
+
+  transition: .3s;
+}
+
+.menu-icon:hover {
+  background:
+    rgba(255, 255, 255, .08);
+
+  transform:
+    translateZ(8px)
+    rotateY(10deg);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    width: 90%;
+
+    padding: 8px 13px;
+
+    border-radius: 13px;
+  }
+
+
+  .logo {
+    font-size: 18px;
+  }
+
+
+  .logo-dot {
+    font-size: 21px;
+  }
+
+
+  .menu-icon {
+    display: block;
+  }
+
+
+  /* MOBILE DROPDOWN */
+
+  .nav-links {
+    position: absolute;
+
+    top: 53px;
     left: 0;
 
     width: 100%;
 
-    height: 35px;
-
-    z-index: 2000;
-
-}
-
-
-
-
-
-/* NAVBAR */
-
-.navbar {
-
-
-    position: fixed;
-
-
-    top: 15px;
-
-
-    left: 50%;
-
-
-    transform: translateX(-50%);
-
-
-    width: 82%;
-
-
-    max-width: 1050px;
-
-
-    height: 55px;
-
+    padding: 11px;
 
     display: flex;
 
+    flex-direction: column;
 
-    align-items: center;
+    gap: 5px;
 
-
-    justify-content: space-between;
-
-
-
-    padding: 0 25px;
-
-
+    border-radius: 14px;
 
     background:
-
-        rgba(15, 23, 42, .85);
-
-
+      rgba(15, 15, 25, .94);
 
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-
-
-    border-radius: 40px;
-
-
-
-    border: 1px solid rgba(255, 255, 255, .15);
-
-
+    border:
+      1px solid rgba(255, 255, 255, .1);
 
     box-shadow:
+      0 15px 30px rgba(0, 0, 0, .4);
 
-        0 10px 30px rgba(0, 0, 0, .35);
+    opacity: 0;
 
-
-
-    z-index: 1000;
-
-
-
-    transition: .45s ease;
-
-
-}
-
-
-
-
-
-/* hidden */
-
-
-.navbar.hide {
-
+    pointer-events: none;
 
     transform:
+      translateY(-10px)
+      rotateX(-10deg);
 
-        translate(-50%, -130%);
+    transform-origin: top;
+
+    transition:
+      opacity .3s,
+      transform .3s;
+  }
 
 
-}
+  .nav-links.active {
+    opacity: 1;
 
-
-
-/* visible */
-
-
-.navbar.show {
-
+    pointer-events: auto;
 
     transform:
+      translateY(0)
+      rotateX(0);
+  }
 
-        translate(-50%, 0);
+
+  .nav-links a {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 9px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+  }
 
 
+  .resume-btn {
+    margin-left: 0;
+
+    margin-top: 3px;
+  }
 }
 
 
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    top: 10px;
+
+    width: 92%;
+
+    padding: 7px 11px;
+  }
 
 
+  .navbar.show {
+    top: 10px;
+  }
 
 
-/* LOGO */
+  .logo {
+    font-size: 17px;
+  }
 
 
-.logo span {
+  .logo-dot {
+    font-size: 20px;
+  }
 
 
-    font-size: 22px;
-
-
-    font-weight: 700;
-
-
-
-    background:
-
-        linear-gradient(90deg,
-            #22d3ee,
-            #a855f7,
-            #ec4899);
-
-
-
-    -webkit-background-clip: text;
-
-
-    color: transparent;
-
-
+  .menu-icon {
+    font-size: 18px;
+  }
 }
 
 
-
-
-
-
-/* LINKS */
-
-
-.nav-links {
-
-
-    display: flex;
-
-
-    align-items: center;
-
-
-    gap: 22px;
-
-
-}
-
-
-
-
-.nav-links a {
-
-
-    text-decoration: none;
-
-
-    color: #e5e7eb;
-
-
-    font-size: 13px;
-
-
-    font-weight: 600;
-
-
-
-    transition: .3s;
-
-
-}
-
-
-
-.nav-links a:hover {
-
-
-    color: #38bdf8;
-
-
-    transform: translateY(-3px);
-
-
-}
-
-
-
-
-
-
-/* RESUME BUTTON */
-
-
-.resume-btn {
-
-
-    padding:
-
-        7px 18px;
-
-
-
-    border-radius: 25px;
-
-
-
-    background:
-
-        linear-gradient(45deg,
-            #2563eb,
-            #9333ea,
-            #ec4899);
-
-
-
-    color: white !important;
-
-
-
-    box-shadow:
-
-        0 0 20px rgba(168, 85, 247, .5);
-
-
-
-}
-
-
-
-
-
-
-/* MOBILE ICON */
-
-
-.menu-icon {
-
-
-    display: none;
-
-
-    color: white;
-
-
-    font-size: 24px;
-
-
-    cursor: pointer;
-
-
-}
-
-
-
-
-
-/* MOBILE */
-
-
-@media(max-width:850px) {
-
-
-
-    .navbar {
-
-
-        width: 88%;
-
-
-    }
-
-
-
-
-    .nav-links {
-
-
-        position: absolute;
-
-
-        top: 70px;
-
-
-        right: -300px;
-
-
-
-        width: 230px;
-
-
-
-        padding: 30px;
-
-
-
-        flex-direction: column;
-
-
-
-        background: #0f172a;
-
-
-
-        border-radius: 25px;
-
-
-
-        transition: .4s;
-
-
-    }
-
-
-
-
-
-    .nav-links.active {
-
-
-        right: 0;
-
-
-    }
-
-
-
-
-
-    .menu-icon {
-
-
-        display: block;
-
-
-    }
-
-
-
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .logo,
+  .logo-main,
+  .logo-dot,
+  .logo-dev,
+  .nav-links a,
+  .menu-icon {
+    transition: none;
+  }
 }

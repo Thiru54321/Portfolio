@@ -1,10 +1,18 @@
 import "./Hero.css";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import profileImage from "../assets/photo.webp";
+import profileImage from "../assets/profile.png";
 
 function Hero() {
   return (
     <section id="home" className="hero">
+
+      <div className="hero-bg">
+        <span className="particle p1"></span>
+        <span className="particle p2"></span>
+        <span className="particle p3"></span>
+        <span className="particle p4"></span>
+        <span className="particle p5"></span>
+      </div>
 
       <div className="hero-left">
 
@@ -25,10 +33,8 @@ function Hero() {
           HTML, CSS, JavaScript, React, Java, Spring Boot and MySQL.
         </p>
 
-
         <div className="hero-buttons">
 
-          {/* GitHub / Hire Me */}
           <a
             href="https://github.com/Thiru54321"
             className="btn"
@@ -38,8 +44,6 @@ function Hero() {
             Hire Me
           </a>
 
-
-          {/* Scroll to Projects */}
           <a
             href="#projects"
             className="btn-outline"
@@ -49,10 +53,7 @@ function Hero() {
 
         </div>
 
-
-
         <div className="social-icons">
-
 
           <a
             href="https://github.com/Thiru54321"
@@ -62,8 +63,6 @@ function Hero() {
             <FaGithub />
           </a>
 
-
-
           <a
             href="https://www.linkedin.com/in/thiruvalluvan-891111244/"
             target="_blank"
@@ -71,8 +70,6 @@ function Hero() {
           >
             <FaLinkedin />
           </a>
-
-
 
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=thiruvalluvan3333@gmail.com"
@@ -82,32 +79,50 @@ function Hero() {
             <FaEnvelope />
           </a>
 
-
         </div>
 
-
       </div>
-
-
-
 
       <div className="hero-right">
 
-        <div className="profile-circle">
+        <div className="scene">
 
-          <img
-            src={profileImage}
-            alt="Thiruvalluvan Profile"
-          />
+          <div className="glow"></div>
+
+          <div className="ring ring1"></div>
+          <div className="ring ring2"></div>
+
+          <div className="profile-card">
+
+            <div className="card-shine"></div>
+
+            <div className="profile-circle">
+              <img
+                src={profileImage}
+                alt="Thiruvalluvan Profile"
+              />
+            </div>
+
+            <div className="floating-tag tag1">
+              Java
+            </div>
+
+            <div className="floating-tag tag2">
+              React
+            </div>
+
+            <div className="floating-tag tag3">
+              Spring Boot
+            </div>
+
+          </div>
 
         </div>
 
       </div>
-
 
     </section>
   );
 }
-
 
 export default Hero;

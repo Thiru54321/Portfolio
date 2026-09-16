@@ -151,7 +151,7 @@ function Contact() {
 
 
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Thiru54321"
               target="_blank"
               rel="noreferrer"
             >
@@ -165,7 +165,7 @@ function Contact() {
 
 
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/thiruvalluvan-891111244/"
               target="_blank"
               rel="noreferrer"
             >
